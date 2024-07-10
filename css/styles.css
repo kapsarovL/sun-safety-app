@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    color: #091114;
+    background-color: #f5f5f5;
+    margin: 20px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #73bbf752;
+    border-radius: 8px;
+    background: linear-gradient(rgba(184, 250, 255, 0.199)100%, rgba(200, 255, 138, 0.151)100%);
+    box-shadow: 0px 4px 4px #61c5ff30, 0px 12px 12px #c8f50015;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 160px;
+    gap: 20px;
+}
+header:before {
+    background-image: url('../images/sun.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    content: '';
+    width: 560px;   
+    height: 160px;
+    position: absolute;
+    z-index: -1;
+    filter: contrast(0.9);
+    opacity: 0.8;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px #61c5ff30, 0px 12px 12px #c8f50015;
+}
+
+h1 {
+font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #7c10d4;
+}
+h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #61c5ff;
+}
+
+p {
+    font-size: 1em;
+    font-weight: 400;
+    color: #091114;
+    line-height: 1.5;
+}
+
+.section {
+    margin-top: 20px;
+    gap: 20px;
+}
+
+
+input, label, select {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+button {
+    background-color: #6a00f5;
+    font-size: 1em;
+    text-decoration: none;
+    max-width: 250px;
+    padding: 10px 20px;
+    color: #f5f5f5;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 16px #4a71f169;
+    animation: bg 10s ease-infinite;
+    letter-spacing: 1px;
+    gap: 50px;
+}
+
+button:hover {
+    background-color: #7c10d4;
+    border: 2px solid #6a00f5;
+    box-shadow: 0 0 16px #4a71f169;
+    transition: all 0.3s;
+    scale: 1.1;
+}
+
+@keyframes bg {
+    0%{background-position: 0% 50%;}
+    50%{background-position: 10% 50%;}
+    100%{background-position: 0% 50%;}
+    
+}
+
+#uvIndexDisplay, #errorDisplay {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc7a;
+    color: #9b3af5;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 700;
+}
+.error {
+    color: red;
+}
+.reminder-list {
+    margin-top: 20px;
+}
+.reminder-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccccccc0;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.reminder-item button {
+    margin-left: 10px;
+    padding: 5px 20px;
+    width: 160px;
+    background-color: #08e400;
+    color: #000000;
+    border: 1px solid #ccccccff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reminder-item button:hover {
+    background-color: #00ff00;
+    border: 1px solid #08e400;
+    transition: all 0.3s;
+    scale: 1.1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+    animation: slideIn 0.3s;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-100px);}
+    to {transform: translateY(0);}
+}
+
+@media (max-width: 600px) {
+    header:before {
+        height: 100px;
+        width: 100%;
+    }
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+    .modal-content {
+        width: 90%;
+    }
+}

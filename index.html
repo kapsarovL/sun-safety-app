@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/286194d6f6.js" crossorigin="anonymous"></script>
+    <title>Sun Safety App</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                Sun Safety App<span>
+                    <i class="fa-solid fa-sun"></i></span>
+            </h1>
+            <p>Real-Time UV & Temp</p>
+        </header>
+        
+        <div class="section">
+            <h2>Check UV Index</h2>
+            <input type="text" id="city" placeholder="Enter city name" />
+            <button type="button" onclick="fetchUVIndex()">
+                <span>Get UV Index</span>
+            </button>
+          
+            <button type="button" onclick="getLocation()"> 
+                <span>Use My Location</span>
+            </button>
+            
+            <div id="uvIndexDisplay"></div>
+            <div id="errorDisplay" class="error"></div>
+        </div>
+        <div class="section">
+            <h2>
+                Set Sunscreen Reminder
+                <span>
+                    <i class="fa-solid fa-folder-closed"></i>
+                </span>
+
+            </h2>
+            <label for="reminderTime">Reminder Time:</label>
+            <input type="time" id="reminderTime" />
+            <button type="button" onclick="addReminder()">
+                Add Reminder
+                <span>
+                    <i class="fa-solid fa-plus-minus"></i></span>
+            </button>
+            <div id="reminderMessage"></div>
+            <div class="reminder-list" id="reminderList"></div>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal()" aria-label="Close" onKeyDown="handleKeyDown(event)">
+            &times;
+        </button>
+            <h2>Edit Reminder</h2>
+            <input type="time" id="reminderTime" />
+            <button type="button" onclick="saveEditReminder()">Save</button>
+        </div>
+    </div>
+ 
+    <script src="./js/script.js"></script>
+</body>
+</html>
